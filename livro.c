@@ -34,7 +34,6 @@ int lerNum (char string[1000]){
   int variavel;
   printf("%s", string);
   scanf("%i", &variavel);
-  return variavel;
 }
 
 char lerChar(char string[1000]){
@@ -61,7 +60,7 @@ int main(){
     printf("(f) Listar Emprestados\n");
     printf("(g) Devolver\n");
     printf("(h) Finalizar programa\n");
-    condicao = lerChar("Opï¿½ï¿½o: ");
+    condicao = lerChar("Opção: ");
     limpaBuf();
 
     if (condicao=='a') {
@@ -100,7 +99,7 @@ int main(){
       amigo.telefone = lerNum("Nï¿½mero: ");
       printf("Email: ");
       gets(amigo.email);
-      fwrite(&amigo, sizeof(Livro),1,arquivoAmigo);
+      fwrite(&amigo, sizeof(Amigo),1,arquivoAmigo);
       fclose(arquivoAmigo);
     }//Ad Amigo
 
@@ -197,7 +196,7 @@ int main(){
       printf("ISBN: ");
       gets(emprestimo.isbn);
       limpaBuf();
-      emprestimo.codigo = lerNum("Cï¿½digo de Amigo: ");
+      emprestimo.codigo = lerNum("Código de Amigo: ");
       printf("Data: ");
       gets(emprestimo.data);
       limpaBuf();
@@ -207,7 +206,7 @@ int main(){
       system("PAUSE");
 
     }//Emprestar
-    // system("cls");
+    system("cls");
   } while(condicao!='h');
   return 0;
 }
